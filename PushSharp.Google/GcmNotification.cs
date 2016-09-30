@@ -153,7 +153,8 @@ namespace PushSharp.Google
                 RegistrationIds = null;
 
             // Ignore null values
-            return JsonConvert.SerializeObject (this,
+            return JsonConvert.SerializeObject (this, 
+                Formatting.None,
                 new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
         }
 

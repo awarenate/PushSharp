@@ -140,7 +140,7 @@ namespace PushSharp.Amazon
 
             JToken expiresJson = new JValue(3540);
             if (json.TryGetValue("expires_in", out expiresJson))
-                Expires = DateTime.UtcNow.AddSeconds(expiresJson.ToObject<int>() - 60);
+                Expires = DateTime.UtcNow.AddSeconds(expiresJson.Value<int>() - 60);
             else
                 Expires = DateTime.UtcNow.AddSeconds(3540);
 
